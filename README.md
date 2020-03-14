@@ -1,7 +1,9 @@
 # [Mod] Obsidian-Mese [obsidianmese]
 
 This MOD for Minetest adds more use for Mese and Obsidian. Add more variety of tools and blocks.
+
 Further Description added by MisterE:
+
 Tools added:
 obsidianmese_sword- a good sword that can be crafted with obsidian and mese
 obsidianmese_sword_engraved - a uncraftable sword that shoots shards that deal damage, or explode if they hit a node, removing 1 node and causing damage in a radius of 4. THIS IS SUPPOSED TO BE DROPPED BY DIFFICULT MOBS
