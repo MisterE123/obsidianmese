@@ -1,4 +1,26 @@
---
+-- Make settingtype for whether to use an explosion for the engraved sword shard hitting a node
+setting = nil
+local use_engraved_sword_shard_explosion = 1
+setting = tonumber(minetest.settings:get("use_engraved_sword_shard_explosion"))
+if setting then
+	use_engraved_sword_shard_explosion = setting
+end
+-- Make a setting for how big the explosion should be in nodes
+setting = nil
+local shard_node_explosion_size = 1
+setting = tonumber(minetest.settings:get("shard_node_explosion_size"))
+if setting then
+	shard_node_explosion_size = setting
+end
+-- Make a setting for the damage radius
+setting = nil
+local shard_node_damage_radius = 4
+setting = tonumber(minetest.settings:get("shard_node_damage_radius"))
+if setting then
+	shard_node_damage_radius = setting
+end
+
+
 -- Tools
 --
 
@@ -123,20 +145,23 @@ minetest.register_entity("obsidianmese:sword_bullet", {
 			self.object:remove()
 			obsidianmese.sync_fired_table(self._owner)
 
-			-- dont damage anything if area protected or next to water
- if minetest.find_node_near(pos, 1, {"group:water"})
- or minetest.is_protected(pos, "") then
- 	return
- end
--- this is where the shot shard can explode when it hets a node. It was commented out,
--- I uncommented it, but changed the explosion radius to 1, and the damage to 4. That should make it non-griefy.
- tnt.boom(pos, {
- 	radius = 1,
- 	damage_radius = 4,
- 	ignore_protection = false,
- 	ignore_on_blast = false,
- 	disable_drops = false
- })
+if use_engraved_sword_shard_explosion == 1 then
+				-- dont damage anything if area protected or next to water
+	 if minetest.find_node_near(pos, 1, {"group:water"})
+	 or minetest.is_protected(pos, "") then
+	 	return
+	 end
+	-- this is where the shot shard can explode when it hets a node. It was commented out,
+	-- I uncommented it, but changed the explosion radius to 1, and the damage to 4. That should make it non-griefy.
+	 tnt.boom(pos, {
+	 	radius = shard_node_explosion_size,
+	 	damage_radius = shard_node_damage_radius,
+	 	ignore_protection = false,
+	 	ignore_on_blast = false,
+	 	disable_drops = false
+	 })
+end
+
 			return
 		end
 
