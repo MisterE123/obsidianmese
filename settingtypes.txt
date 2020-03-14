@@ -1,0 +1,10 @@
+#Whether to use an explosion when the shard shot from an obsidian mese engraved sword hits a node (1= true, 0 = false)
+use_engraved_sword_shard_explosion (Use Engraved Sword Shard Explosion) int 1 0 1
+
+#If explosions are enabled from shards shot from an obsidian mese engraved sword, what is the size of the node removal explosion (min 1, default 1)
+shard_node_explosion_size (Shard Node Explosion Size) int 1 1
+
+#The radius of damage inflicted by an explosion caused by an obsidian shard shot from an engraved sword hitting a node (min 1, default 4)
+shard_node_damage_radius (Shard Node Damage Radius) int 4 1
+
+
