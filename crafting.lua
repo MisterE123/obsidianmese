@@ -26,6 +26,15 @@ minetest.register_craftitem("obsidianmese:mese_apple", {
 --
 
 
+-- Make settingtype for whether to use any crafts at all for obsidianmese items, if not you should make obsidianmese items nice mob drops and rewards.
+setting = nil
+local use_obsidianmese_crafts = 1
+setting = tonumber(minetest.settings:get("use_obsidianmese_crafts"))
+if setting then
+	use_obsidianmese_crafts = setting
+end
+
+if use_obsidianmese_crafts == 1 then
 minetest.register_craft({
 	output = "obsidianmese:sword",
 	recipe = {
@@ -88,3 +97,4 @@ minetest.register_craft({
 		{"", "default:apple", ""},
 	}
 })
+end
