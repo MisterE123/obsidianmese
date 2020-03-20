@@ -8,3 +8,6 @@ shard_node_explosion_size (Shard Node Explosion Size) int 1 1
 shard_node_damage_radius (Shard Node Damage Radius) int 4 1
 
 
+#whether to include crafts for items in obsidianmese (1 = true, 0 = false)
+use_obsidianmese_crafts (Use crafts for obsidianmese items) int 1 0 1
+
