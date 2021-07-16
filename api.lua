@@ -440,7 +440,17 @@ function obsidianmese.register_capitator()
 		"default:jungletree",
 		"default:pine_tree",
 		"default:acacia_tree",
-		"default:aspen_tree"
+		"default:aspen_tree",
+-- ethereal support
+		"ethereal:willow_trunk",
+		"ethereal:yellow_trunk",
+		"ethereal:banana_trunk",
+		"ethereal:frost_tree",
+		"ethereal:palm_trunk",
+		"ethereal:redwood_trunk",
+		"ethereal:birch_trunk",
+		"ethereal:sakura_trunk",
+		"ethereal:olive_trunk",
 	}
 
 	for i = 1, #trees do
